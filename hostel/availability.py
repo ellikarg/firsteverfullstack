@@ -1,6 +1,7 @@
 import datetime
 from hostel.models import Room, Booking
 
+
 def check_availability(room, check_in, check_out):
     availability_list = []
     booking_list = Booking.objects.filter(room=room)
