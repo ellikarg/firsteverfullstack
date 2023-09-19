@@ -5,8 +5,12 @@ from .forms import AvailabilityForm
 from .availability import check_availability
 
 
-def render_home(request):
-    return render(request, 'hostel/index.html')
+def home(request):
+    return render(request, 'hostel/home.html')
+
+
+def academy(request):
+    return render(request, 'hostel/academy.html')
 
 
 class RoomList(ListView):

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+# import cloudinary_storage
 
 if os.path.isfile("env.py"):
     import env
@@ -144,3 +145,12 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Cloudinary storage
+
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dfmzzhsad',
+#     'API_KEY': '757697766161984',
+#     'API_SECRET': 'aXT2Lzk5EFCTzDehGmd5Bmt-wDA'
+# }

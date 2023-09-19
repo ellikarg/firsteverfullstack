@@ -4,38 +4,37 @@
 <html class="h-100">
 
 <head>
-    <title>CodeStar Blog</title>
+    <title>Memorial da Capoeira</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 
 </head>
 
 <body>
     <!-- Navbar Start-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div id="logo-container"><a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}"
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div id="logo-container"><a class="navbar-brand" href="/"><img src="{% static 'images/logo.png' %}"
                     alt="Logo of the Memorial da Capoeira" id="logo"></a></div>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Academy</a>
+                    <a class="nav-link" href="academy/">Academy</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -61,18 +60,21 @@
         <!-- Content of the pages -->
         {% endblock %}
     </main>
-    
+
     <!-- Footer Start -->
     <footer>
         <div class="footer">
             <div class="footer-flex">
                 <div class="footer-items">
-                    <h3>Come find us here:</h3>
+                    <h3>Come find<br>us here:</h3>
+                </div>
+                <div class="footer-items"><i class="fa-regular fa-circle-right"></i></div>
+                <div class="footer-items">
+                    <span><strong>in real life:</strong><br>Av. Solange Nunes do Nascimento<br>Cidade Nova<br>Natal -
+                        RN, Brazil</span>
                 </div>
                 <div class="footer-items">
-                    <span>Av. Solange Nunes do Nascimento<br>Cidade Nova<br>Natal - RN, Brazil</span>
-                </div>
-                <div class="footer-items">
+                    <span><strong>on social media:</strong></span>
                     <ul>
                         <li>
                             <a href="https://www.facebook.com/pages/Mem%C3%B3rial%20Da%20Capoeira/1323161577802917/"
@@ -90,7 +92,16 @@
     </footer>
     <!-- Footer End -->
 
-    <!--font awesome script-->
+    <!-- js and font awesome scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="https://kit.fontawesome.com/4cbdfd1d03.js" crossorigin="anonymous"></script>
 </body>
 

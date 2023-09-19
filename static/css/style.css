@@ -1,11 +1,19 @@
 /* navigation */
 
+.navbar {
+    background-color: #E6E9EC;
+}
+
+.navbar-toggler {
+    color: #353E45;
+}
+
 #logo {
     max-width: 100%;
 }
 
 #logo-container {
-    max-width: 10%;
+    width: 10rem;
     margin-left: 1%;
 }
 
@@ -13,10 +21,13 @@
     margin-right: 1%;
 }
 
+.nav-item li {
+    color: #353E45;
+}
+
 /* banner */
 
 .banner {
-    background-image: url('../images/home_banner.JPG');
     height: 20rlh;
     width: 100%;
     background-repeat: no-repeat;
@@ -43,6 +54,14 @@
     font-weight: 700;
     font-size: 180%;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.home-banner {
+    background-image: url('../images/home_banner.JPG');
+}
+
+.academy-banner {
+    background-image: url('../images/academy_banner.jpg');
 }
 
 
@@ -73,22 +92,36 @@
     height: auto;
 }
 
-.card-body .btn {
-    justify-self: center;
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
+.btn-custom {
+    background-color: #223116;
+    color: #E6E9EC;
+}
+
 
 /* footer */
 
 .footer {
     height: 150px;
-    background-color: grey;
+    background-color: #E6E9EC;
+}
+
+.footer-flex {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #353E45;
 }
 
 .footer-items {
-    border-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
     text-align: center;
 }
 
@@ -104,5 +137,11 @@
 
 .footer i {
     font-size: 160%;
-    color: black;
+    color: #353E45;
+}
+
+@media screen and (max-width: 700px) {
+    .footer-flex {
+        flex-direction: column;
+    }
 }
