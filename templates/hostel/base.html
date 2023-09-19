@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+    <title>CodeStar Blog</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <!-- Navbar Start-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div id="logo-container"><a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}"
+                    alt="Logo of the Memorial da Capoeira" id="logo"></a></div>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Academy</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Hostel
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Rooms</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Booking</a>
+                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        <!-- Content of the pages -->
+        {% endblock %}
+    </main>
+    
+    <!-- Footer Start -->
+    <footer>
+        <div class="footer">
+            <div class="footer-flex">
+                <div class="footer-items">
+                    <h3>Come find us here:</h3>
+                </div>
+                <div class="footer-items">
+                    <span>Av. Solange Nunes do Nascimento<br>Cidade Nova<br>Natal - RN, Brazil</span>
+                </div>
+                <div class="footer-items">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/pages/Mem%C3%B3rial%20Da%20Capoeira/1323161577802917/"
+                                target="_blank" rel="noopener" aria-label="Visit us on our Facebook page"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/memorialdacapoeira/" target="_blank" rel="noopener"
+                                aria-label="Visit us on our Instagram page"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!--font awesome script-->
+    <script src="https://kit.fontawesome.com/4cbdfd1d03.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

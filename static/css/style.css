@@ -1,0 +1,108 @@
+/* navigation */
+
+#logo {
+    max-width: 100%;
+}
+
+#logo-container {
+    max-width: 10%;
+    margin-left: 1%;
+}
+
+.navbar-nav {
+    margin-right: 1%;
+}
+
+/* banner */
+
+.banner {
+    background-image: url('../images/home_banner.JPG');
+    height: 20rlh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.banner h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 350%;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.banner h2 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 180%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+
+/* Cards */
+
+.section {
+    margin: 5% auto;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card {
+    margin: 0% 2%;
+    padding: 1%;
+}
+
+.card-img-top-container {
+    max-height: 7rlh;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-body .btn {
+    justify-self: center;
+}
+
+/* footer */
+
+.footer {
+    height: 150px;
+    background-color: grey;
+}
+
+.footer-items {
+    border-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+}
+
+.footer li {
+    display: inline;
+}
+
+.footer ul {
+    max-height: 80%;
+    padding: 1% 0;
+}
+
+
+.footer i {
+    font-size: 160%;
+    color: black;
+}

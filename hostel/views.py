@@ -5,6 +5,10 @@ from .forms import AvailabilityForm
 from .availability import check_availability
 
 
+def render_home(request):
+    return render(request, 'hostel/index.html')
+
+
 class RoomList(ListView):
     model = Room
 
