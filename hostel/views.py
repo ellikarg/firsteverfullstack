@@ -15,11 +15,11 @@ class BookingList(ListView):
 
 class BookingView(FormView):
     form_class = AvailabilityForm
-    template_name = 'availability_form.html'
+    template_name = 'hostel/availability_form.html'
 
     def form_valid(self, form):
         data = form.cleaned_data
-        room_list = Room.objects.filter(name=data['rooms'])
+        room_list = Room.objects.filter(name=data['room'])
         available_rooms = []
         for room in room_list:
             if check_availability(room, data['check_in'], data['check_out']):
