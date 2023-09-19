@@ -19,11 +19,14 @@ class BookingView(FormView):
 
     def form_valid(self, form):
         data = form.cleaned_data
-        room_list = Room.objects.filter(name=data['room'])
+        room_list = Room.objects.filter(name=data['room_choices'])
         available_rooms = []
+
         for room in room_list:
             if check_availability(room, data['check_in'], data['check_out']):
                 available_rooms.append(room)
+                print(available_rooms)
+
         if len(available_rooms) > 0:
             room = available_rooms[0]
             booking = Booking.objects.create(

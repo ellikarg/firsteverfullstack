@@ -1,14 +1,13 @@
 from django import forms
-from django.forms import ModelForm
 from .models import Booking
 
 
+class AvailabilityForm(forms.Form):
+    rooms = (
+        ('Oiá', 'Oiá'),
+        ('Ogum', 'Ogum'),
+    )
 
-class AvailabilityForm(ModelForm):
-    class Meta:
-        model = Booking
-        fields = ('user', 'room', 'check_in', 'check_out')
-
-
-    # check_in = forms.DateField(input_formats=["%b %d, %Y", ], required=True)
-    # check_out = forms.DateField(input_formats=["%b %d, %Y", ], required=True)
+    room_choices = forms.ChoiceField(choices=rooms, required=True)
+    check_in = forms.DateField(input_formats=["%Y-%m-%d", ], required=True)
+    check_out = forms.DateField(input_formats=["%Y-%m-%d", ], required=True)

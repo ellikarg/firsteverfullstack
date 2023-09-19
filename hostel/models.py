@@ -3,8 +3,12 @@ from django.conf import settings
 
 
 class Room(models.Model):
+    rooms = (
+        ('Oiá', 'Oiá'),
+        ('Ogum', 'Ogum'),
+    )
     id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, choices=rooms)
     beds = models.IntegerField()
     capacity = models.IntegerField()
 
@@ -12,7 +16,7 @@ class Room(models.Model):
         ordering = ['id']
 
     def __str__(self):
-        return f"{self.id} room {self.name} with {self.beds} beds for {self.capacity} persons"
+        return f"{self.id} room {self.name} with {self.beds} bed(s) for {self.capacity} persons"
 
 
 class Booking(models.Model):
