@@ -25,6 +25,13 @@
     color: #353E45;
 }
 
+/* headings */
+
+h1 {
+    padding: 3% 1%;
+}
+
+
 /* banner */
 
 .banner {
@@ -106,35 +113,62 @@
 
 /* carousel */
 
+.carousel {
+    border: 1px solid #353E45;
+}
+
 .carousel-item {
     max-width: 100%;
-    max-height: 30rlh;
+    height: 30rlh;
 }
 
 .carousel-flex {
     display: flex;
     flex-direction: row;
+    height: 100%;
+    align-items: center;
 }
 
 .carousel-flex-text {
-    border: 2px solid red;
+    display: flex;
     width: 35%;
+    justify-content: flex-end;
 }
 
-.carousel-flex-text-centered {
-    top: 50%;
+.classes {
+    width: 70%;
     text-align: center;
+
 }
 
 .carousel-flex-img {
+    background-size: cover;
+    background-position: center;
     width: 65%;
+    height: 30rlh;
+    vertical-align: middle;
 }
+
+#capoeira-class {
+    background-image: url('../images/classes_1.JPG');
+}
+
+#yoga-class {
+    background-image: url('../images/classes_2.JPG');
+    background-position: bottom;
+}
+
+#surf-class {
+    background-image: url('../images/classes_3.jpg');
+}
+
 
 /* footer */
 
 .footer {
     height: 150px;
     background-color: #E6E9EC;
+    margin-top: 5%;
 }
 
 .footer-flex {
