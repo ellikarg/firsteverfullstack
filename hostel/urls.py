@@ -1,5 +1,5 @@
-from . import views
 from django.urls import path
+from . import views
 from .views import RoomList, BookingList, BookingView
 
 app_name = 'hostel'

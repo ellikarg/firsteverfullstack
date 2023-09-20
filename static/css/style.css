@@ -104,6 +104,31 @@
     color: #E6E9EC;
 }
 
+/* carousel */
+
+.carousel-item {
+    max-width: 100%;
+    max-height: 30rlh;
+}
+
+.carousel-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel-flex-text {
+    border: 2px solid red;
+    width: 35%;
+}
+
+.carousel-flex-text-centered {
+    top: 50%;
+    text-align: center;
+}
+
+.carousel-flex-img {
+    width: 65%;
+}
 
 /* footer */
 
