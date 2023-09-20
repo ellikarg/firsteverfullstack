@@ -1,0 +1,15 @@
+{% extends 'hostel/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<h1>{{ rooms }}</h1>
+
+<form action="" method="POST">
+    <p>{% render_field form.check_in placeholder="Pick a Date" type="date" %}</p>
+    <p>{% render_field form.check_out placeholder="Pick a Date" type="date" %}</p>
+    {% csrf_token %}
+    <button type="Submit" class="btn btn-custom">Book me a room</button>
+</form>
+
+{% endblock %}

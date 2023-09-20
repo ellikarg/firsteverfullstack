@@ -4,8 +4,8 @@ from django.conf import settings
 
 class Room(models.Model):
     rooms = (
-        ('Oiá', 'Oiá'),
-        ('Ogum', 'Ogum'),
+        ('oia', 'OIÁ with 1 bed for 2 persons'),
+        ('ogum', 'OGUM with 2 beds for 2 persons'),
     )
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=20, choices=rooms)
@@ -24,6 +24,9 @@ class Booking(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     check_in = models.DateField()
     check_out = models.DateField()
+
+    class Meta:
+        ordering = ['room', 'check_in']
 
     def __str__(self):
         return f"{self.user} has booked {self.room} from {self.check_in} until {self.check_out}"

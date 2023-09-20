@@ -50,7 +50,11 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'widget_tweaks',
+
+    #my_apps
     'hostel',
+    'hostel.booking_functions',
 ]
 
 SITE_ID = 1
