@@ -1,4 +1,4 @@
-# Travel Cost Calculator -  Testing
+# Memorial da Capoeira -  Testing
 
 [Back to README](README.md)
 
@@ -6,8 +6,12 @@
 
 ## CONTENTS
 
-* [AUTOMATED TESTING](#automated-testing)
-  * [PEP8 Testing](#pep8-testing)
+* [VALIDATION](#validation)
+    1. [HTML Validation](#html-validation)
+    2. [CSS Validation](#css-validation)
+    4. [JavaScript Validation](#javascript-validation)
+    5. [PEP8 Validation](#pep8-validation)
+    6. [Accessibility & Performance](#accessibility-and-performance)
 * [MANUAL TESTING](#manual-testing)
   * [Manual Python Testing](#manual-python-testing)
   * [Testing User Stories](#testing-user-stories)
@@ -19,13 +23,21 @@
 
 - - -
 
-## AUTOMATED TESTING
+## VALIDATION
 
-### PEP8 Testing
+### HTML Validation
+
+### CSS Validation
+
+### JavaScript Validation
+
+### PEP8 Validation
 
 The code was passed through the [PEP8 linter](https://pep8ci.herokuapp.com/) and there are no problems
 <details><summary>Testing Result</summary>
 <img src = "docs/pep8_testing.PNG"></details>
+
+### Accessibility & Performance
 
 - - -
 
