@@ -23,6 +23,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='room',
             name='name',
-            field=models.CharField(choices=[('Oiá', 'Oiá'), ('Ogum', 'Ogum')], max_length=20),
+            field=models.CharField(choices=[('oia', 'Oiá'), ('ogum', 'Ogum')], max_length=20),
         ),
     ]

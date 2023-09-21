@@ -37,16 +37,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'hostel:academy' %}">Academy</a>
                 </li>
+                
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Hostel
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hostel
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Rooms</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Booking</a>
-                    </div>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'hostel:room_list' %}">Rooms</a></li>
+                      <li><a class="dropdown-item" href="#">Booking</a></li>
+                    </ul>
+                </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

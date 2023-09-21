@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='room',
             name='name',
-            field=models.CharField(choices=[('Oia', 'OIÁ with 1 bed for 2 persons'), ('Ogum', 'OGUM with 2 beds for 2 persons')], max_length=20),
+            field=models.CharField(choices=[('oia', 'OIÁ with 1 bed for 2 persons'), ('ogum', 'OGUM with 2 beds for 2 persons')], max_length=20),
         ),
     ]

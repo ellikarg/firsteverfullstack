@@ -13,8 +13,8 @@ def academy(request):
     return render(request, 'hostel/academy.html')
 
 
-class RoomView(ListView):
-    model = Room
+def RoomListView(request):
+    return render(request, 'hostel/room_list.html')
 
 
 class BookingList(ListView):
