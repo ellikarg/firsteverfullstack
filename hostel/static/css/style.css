@@ -136,9 +136,8 @@ h1 {
 }
 
 .classes {
-    width: 70%;
+    width: 65%;
     text-align: center;
-
 }
 
 .carousel-flex-img {
@@ -160,6 +159,60 @@ h1 {
 
 #surf-class {
     background-image: url('../images/classes_3.jpg');
+}
+
+/* Room Detail View */
+
+.room {
+    width: 80%;
+    height: 40rlh;
+    margin: auto;
+    margin-top: 3%;
+    border: 2px solid red;
+}
+
+.room-detail-img {
+    width: 35%;
+    height: 100%;
+}
+
+.room-detail-img img {
+    height: 30%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.room-detail-booking {
+    width: 65%;
+    text-align: center;
+}
+
+#booking-img {
+    width: 50%;
+}
+
+#booking-img img {
+    width: 100%;
+}
+
+/* Room Detail View */
+
+.room-overview {
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.room-images {
+    width: 100%;
+}
+
+.room-images img {
+    width: 30%;
+}
+
+.room-description {
+    padding: 3% 0px;
 }
 
 

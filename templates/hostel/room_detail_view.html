@@ -1,15 +1,26 @@
 {% extends 'hostel/base.html' %}
 {% load widget_tweaks %}
+{% load static %}
 
 {% block content %}
 
-<h1>{{ rooms }}</h1>
+<div class="d-flex room align-items-center">
+    <div class="d-flex" id="booking-img">
+        <img src="{% static 'images/booking_img.jpg' %}" alt="Image of a beach with a sign that says 'seja feliz'">
+    </div>
+    <div class="ms-3 room-detail-booking">
+        <div>
+            <h1>{{ rooms }}</h1>
+            <p>Check the availability and book the room {{ rooms }}:</p>
+            <form action="" method="POST">
+                <p>{% render_field form.check_in placeholder="Pick a Date" type="date" %}</p>
+                <p>{% render_field form.check_out placeholder="Pick a Date" type="date" %}</p>
+                {% csrf_token %}
+                <button type="Submit" class="btn btn-custom">Book the room</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-<form action="" method="POST">
-    <p>{% render_field form.check_in placeholder="Pick a Date" type="date" %}</p>
-    <p>{% render_field form.check_out placeholder="Pick a Date" type="date" %}</p>
-    {% csrf_token %}
-    <button type="Submit" class="btn btn-custom">Book me a room</button>
-</form>
 
 {% endblock %}
