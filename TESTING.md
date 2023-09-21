@@ -23,33 +23,41 @@
 
 - - -
 
+<a name="validation"></a>
 ## VALIDATION
 
+<a name="html-validation"></a>
 ### HTML Validation
 
+<a name="css-validation"></a>
 ### CSS Validation
 
+<a name="javascript-validation"></a>
 ### JavaScript Validation
 
+<a name="pep8-validation"></a>
 ### PEP8 Validation
 
 The code was passed through the [PEP8 linter](https://pep8ci.herokuapp.com/) and there are no problems
 <details><summary>Testing Result</summary>
 <img src = "docs/pep8_testing.PNG"></details>
 
+<a name="accessibility-and-performance"></a>
 ### Accessibility & Performance
 
 - - -
 
+<a name="manual-testing"></a>
 ## MANUAL TESTING
 
+<a name="manual-python-testing"></a>
 ### Manual Python Testing
 
 I have manually tested this project by doing the following:
 - given invalid inputs: when the user inputs invalid data she/he is notified and asked to try again
 - tested in my loval terminal and the Code Institute Heroku terminal
 
-
+<a name="testing-user-stories"></a>
 ### Testing User Stories
 
 `First Time Visitors`
@@ -71,6 +79,7 @@ I have manually tested this project by doing the following:
 | :--- | :--- |
 | I want to understand the data, the underlying logic of the programme and how the data is validated | The interested person can check the data in the google spreadsheet and get the links to the websites where the Indices can be found from the README.md. The code is written according to the [python style guidlines](https://peps.python.org/pep-0008/#introduction) to ensure easy and clear readibility. The validation is done with while loops and try/except statements. |
 
+<a name="full-testing"></a>
 ### Full Testing
 
 `Main Page`
@@ -86,8 +95,10 @@ I have manually tested this project by doing the following:
 
 - - -
 
+<a name="bugs"></a>
 ## BUGS
 
+<a name="solved-bugs"></a>
 ### Solved Bugs
 
 | No | Bug | How I solved the issue |
@@ -96,6 +107,7 @@ I have manually tested this project by doing the following:
 
 - - -
 
+<a name="known-bugs"></a>
 ### Known Bugs
 
 | No | Bug | |
