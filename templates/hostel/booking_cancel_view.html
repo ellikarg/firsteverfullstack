@@ -10,13 +10,10 @@
     </div>
     <div class="ms-3 room-detail-booking">
         <div>
-            <h1>{{ rooms }}</h1>
-            <p>Check the availability and book the room {{ rooms }}:</p>
             <form action="" method="POST">
-                <p>{% render_field form.check_in placeholder="Pick a Date" type="date" %}</p>
-                <p>{% render_field form.check_out placeholder="Pick a Date" type="date" %}</p>
                 {% csrf_token %}
-                <button type="Submit" class="btn btn-custom">Book the room</button>
+                <p>Are you sure you want to cancel this booking: {{ booking }}</p>
+                <button type="Submit" class="btn btn-custom">Cancel the Booking</button>
             </form>
         </div>
     </div>

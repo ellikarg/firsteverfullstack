@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
-from django.views.generic import ListView, FormView, View
+from django.views.generic import ListView, FormView, View, DeleteView
+from django.urls import reverse, reverse_lazy
 from .models import Room, Booking
 from .forms import BookingForm
 from hostel.booking_functions.availability import check_availability
@@ -14,11 +15,25 @@ def academy(request):
 
 
 def RoomListView(request):
+    general_room = Room.objects.all()[0]
+    all_rooms = dict(general_room.rooms)
+
+    for room in all_rooms:
+        one_room = all_rooms.get(room)
+        room_url = reverse('hostel:room_detail_view', kwargs={'name': room})
+
     return render(request, 'hostel/room_list.html')
 
 
 class BookingList(ListView):
     model = Booking
+    def get_queryset(self, *args, **kwargs):
+        if self.request.user.is_staff: 
+            booking_list = Booking.objects.all()
+            return booking_list
+        else:
+            booking_list = Booking.objects.filter(user=self.request.user)
+            return booking_list
 
 
 class RoomDetailView(View):
@@ -36,16 +51,15 @@ class RoomDetailView(View):
             return render(request, 'hostel/room_detail_view.html', context)
         else:
             return HttpResponse('Room does not exist')
-        
 
     def post(self, request, *args, **kwargs):
         rooms = self.kwargs.get('name', None)
         room_list = Room.objects.filter(name=rooms)
         form = BookingForm(request.POST)
-        
+
         if form.is_valid():
             data = form.cleaned_data
-        
+
         available_rooms = []
         for room in room_list:
             if check_availability(room, data['check_in'], data['check_out']):
@@ -90,3 +104,9 @@ class BookingView(FormView):
             return HttpResponse(booking)
         else:
             return HttpResponse('Sorry, this room is already booked in the time you chose. Please try another room or date!')
+
+
+class CancelBookingView(DeleteView):
+    model = Booking
+    template_name = 'hostel/booking_cancel_view.html'
+    success_url = reverse_lazy('hostel:booking_list')

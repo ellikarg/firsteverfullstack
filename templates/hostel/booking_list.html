@@ -1,20 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Room List</title>
-</head>
-<body>
-    {% for booking in booking_list %}
-    <h3>{{booking}}</h3>
-    {% endfor %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% extends 'hostel/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+<div class="d-flex flex-column">
+    <div class="header">
+        <div class="headings">
+            <h1>Manage Your Bookings</h1>
+            <h2>You are currently logged in as {{user}}</h2>
+        </div>
+        <div class="home">
+            <!-- Back to Rooms List -->
+            <div class="home">
+                <a href="{% url 'hostel:room_list' %}"><i class="fas fa-arrow-alt-circle-left"> Back to the Rooms</i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bookings">
+        {% for booking in booking_list %}
+        <div class="booking">
+            <img src="{% static 'images/memorial_card.jpg' %}"
+                alt="Image of the Memorial da Capoeira">
+                <h3>{{booking.room.name}}</h3>
+                <p>From: {{booking.check_in}}</p>
+                <p>To: {{booking.check_out}}</p>
+                <p>Beds: {{booking.room.beds}}</p>
+                <p>Capacity: {{booking.room.capacity}}</p>
+            <div class="cancel"><a href="{{booking.get_cancel_booking_url}}" class="invisible"><i
+                        class="far fa-2x fa-times-circle"> Cancel this Booking</i></a></div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
