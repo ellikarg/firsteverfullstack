@@ -1,3 +1,9 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* navigation */
 
 .navbar {
@@ -85,7 +91,7 @@ h1 {
 }
 
 .card {
-    margin: 0% 2%;
+    margin: 2% 2%;
     padding: 1%;
 }
 
@@ -115,6 +121,7 @@ h1 {
 
 .carousel {
     border: 1px solid #353E45;
+    margin-bottom: 2%;
 }
 
 .carousel-item {
@@ -123,8 +130,6 @@ h1 {
 }
 
 .carousel-flex {
-    display: flex;
-    flex-direction: row;
     height: 100%;
     align-items: center;
 }
@@ -195,12 +200,11 @@ h1 {
     width: 100%;
 }
 
-/* Room Detail View */
+/* Room List View */
 
 .room-overview {
     width: 80%;
-    margin: auto;
-    margin-top: 3%;
+    margin: 3% auto;
 }
 
 .room-images {
@@ -208,7 +212,9 @@ h1 {
 }
 
 .room-images img {
-    width: 30%;
+    width: 22rem;
+    min-height: 100px;
+    padding: 1%;
 }
 
 .room-description {
@@ -218,14 +224,13 @@ h1 {
 
 /* footer */
 
-.footer {
-    height: 150px;
+footer {
+    width: 100%;
     background-color: #E6E9EC;
-    margin-top: 5%;
+    margin-top: auto;
 }
 
 .footer-flex {
-    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -235,6 +240,7 @@ h1 {
 
 .footer-items {
     text-align: center;
+    padding: 2% 1%;
 }
 
 .footer li {
@@ -252,8 +258,17 @@ h1 {
     color: #353E45;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
     .footer-flex {
         flex-direction: column;
     }
+
+    .classes {
+        width: 100%;
+    }  
+    
+    .carousel-flex-text {
+        width: 100%;
+        justify-content: center;
+    }  
 }
