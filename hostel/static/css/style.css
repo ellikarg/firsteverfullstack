@@ -17,12 +17,10 @@ body {
 #logo {
     max-width: 100%;
     height: auto;
-    border: 2px solid blue;
 }
 
 #logo-container {
     width: 10rem;
-    border: 2px solid red;
 }
 
 .navbar-nav {
@@ -60,7 +58,7 @@ h1 {
     font-size: 350%;
     text-transform: uppercase;
     font-weight: 900;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.9);
 }
 
 .banner h2 {
@@ -68,7 +66,7 @@ h1 {
     color: #ffffff;
     font-weight: 700;
     font-size: 180%;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.9);
 }
 
 .home-banner {
@@ -78,6 +76,15 @@ h1 {
 .academy-banner {
     background-image: url('../images/academy_banner.jpg');
 }
+
+.hostel-banner {
+    background-image: url('../images/rooms_banner.jpg');
+}
+
+.hostel-banner h1 {
+    color: #BF8D27;
+}
+
 
 
 /* Cards */
@@ -112,6 +119,10 @@ h1 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+.card-body-item {
+    padding: 5% auto;
 }
 
 .btn-custom {

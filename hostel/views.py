@@ -32,7 +32,7 @@ class BookingList(ListView):
 
 class RoomDetailView(View):
     def get(self, request, *args, **kwargs):
-        rooms = self.kwargs.get('name', None)
+        rooms = kwargs.get('name', None)
         form = BookingForm()
         room_exists = Room.objects.filter(name=rooms).exists()
         if room_exists:
@@ -47,18 +47,24 @@ class RoomDetailView(View):
             return HttpResponse('Room does not exist')
 
     def post(self, request, *args, **kwargs):
-        rooms = self.kwargs.get('name', None)
+        rooms = kwargs.get('name', None)
         room_list = Room.objects.filter(name=rooms)
         form = BookingForm(request.POST)
+
+        data = None
 
         if form.is_valid():
             data = form.cleaned_data
 
         available_rooms = []
-        for room in room_list:
-            if check_availability(room, data['check_in'], data['check_out']):
-                available_rooms.append(room)
-
+        if data is not None: 
+            for room in room_list:
+                if check_availability(room, data['check_in'], data['check_out']):
+                    if data['check_in'] < data['check_out']:
+                        available_rooms.append(room)
+                    else:
+                        messages.info (request, 'Your Check-out must be after your Check-in')
+                        return redirect(request.get_full_path())
         if len(available_rooms) > 0:
             room = available_rooms[0]
             if request.user.is_authenticated:
