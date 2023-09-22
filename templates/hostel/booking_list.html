@@ -20,18 +20,20 @@
 
 <!-- Manage Bookings Area -->
 <div class="d-flex flex-column">
-    <div class="header">
         <div class="headings">
             <h1>Manage Your Bookings</h1>
             <p><strong>You are currently logged in as {{user}}</strong></p>
         </div>
-    </div>
 
     <div class="bookings">
         {% for booking in booking_list %}
         <div class="booking">
-            <img src="{% static 'images/memorial_card.jpg' %}"
-                alt="Image of the Memorial da Capoeira">
+            {% if "Oiá" in booking.room.name %}
+            <img src="{% static 'images/oia_3.JPG' %}" alt="Image of a beach close by related to the Room Oiá">
+            {% else %}
+            <img src="{% static 'images/ogum_3.jpg' %}" alt="Image of a beach close by related to the Room Ogum">
+            {% endif %}
+
                 <h3>{{booking.room.name}}</h3>
                 <p>From: {{booking.check_in}}</p>
                 <p>To: {{booking.check_out}}</p>

@@ -12,8 +12,12 @@
         <div>
             <form action="" method="POST">
                 {% csrf_token %}
-                <p>Are you sure you want to cancel this booking: {{ booking }}</p>
-                <button type="Submit" class="btn btn-cancel">Cancel the Booking</button>
+                <p><strong>Are you sure you want to cancel this booking?</strong></p>
+                <br><p>From: {{booking.check_in}}</p>
+                <p>To: {{booking.check_out}}</p>
+                <p>Beds: {{booking.room.beds}}</p>
+                <p>Capacity: {{booking.room.capacity}}</p><br>
+                <button type="Submit" class="btn btn-cancel-confirm">Cancel the Booking</button>
             </form>
         </div>
     </div>

@@ -215,23 +215,18 @@ h1 {
 
 /* booking list */
 
-.header{
-    display: flex;
-    flex-flow: row-reverse wrap;
-    justify-content: space-evenly;
-    align-items: center;
+.headings {
+    text-align: center;
 }
 
 .bookings{
     margin-top: 2rem;
-    flex:1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 .booking{
-    flex:1;
     max-width:20vw;
     min-width: 20rem;
     text-align: center;
@@ -240,10 +235,7 @@ h1 {
     border-radius: 0.75rem;
     margin:1rem;
 }
-.booking:hover{
-    cursor: pointer;
 
-}
 img{
     max-width: 100%;
     margin-bottom: 2rem;
@@ -253,7 +245,12 @@ img{
     padding-top: 5%;
 }
 
-.cancel a:hover{
+.cancel a:hover {
+    color: rgb(206, 43, 43);
+    border: 2px solid red;
+}
+
+.btn-cancel-confirm {
     color: rgb(206, 43, 43);
     border: 2px solid red;
 }
