@@ -4,17 +4,26 @@
 
 {% block content %}
 
+{% if messages %}
+    {% for message in messages %}
+    <br>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+{% endif %}
+
+<!-- Back to Rooms List -->
+<div class="d-flex justify-content-center back-button">
+    <a href="{% url 'hostel:room_list' %}" class="btn btn-custom"><i class="fas fa-arrow-alt-circle-left"></i> Back to the Rooms</a>
+</div>
+
+<!-- Manage Bookings Area -->
 <div class="d-flex flex-column">
     <div class="header">
         <div class="headings">
             <h1>Manage Your Bookings</h1>
-            <h2>You are currently logged in as {{user}}</h2>
-        </div>
-        <div class="home">
-            <!-- Back to Rooms List -->
-            <div class="home">
-                <a href="{% url 'hostel:room_list' %}"><i class="fas fa-arrow-alt-circle-left"> Back to the Rooms</i></a>
-            </div>
+            <p><strong>You are currently logged in as {{user}}</strong></p>
         </div>
     </div>
 
@@ -28,8 +37,7 @@
                 <p>To: {{booking.check_out}}</p>
                 <p>Beds: {{booking.room.beds}}</p>
                 <p>Capacity: {{booking.room.capacity}}</p>
-            <div class="cancel"><a href="{{booking.get_cancel_booking_url}}" class="invisible"><i
-                        class="far fa-2x fa-times-circle"> Cancel this Booking</i></a></div>
+            <div class="cancel"><a href="{{booking.get_cancel_booking_url}}" class="btn btn-cancel">Cancel this Booking</a></div>
 
         </div>
         {% endfor %}

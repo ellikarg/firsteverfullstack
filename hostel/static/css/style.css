@@ -168,6 +168,10 @@ h1 {
 
 /* room detail with form */
 
+.back-button {
+    padding-top: 2%;
+}
+
 .room {
     width: 80%;
     height: 100%;
@@ -209,6 +213,56 @@ h1 {
 }
 
 
+/* booking list */
+
+.header{
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bookings{
+    margin-top: 2rem;
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.booking{
+    flex:1;
+    max-width:20vw;
+    min-width: 20rem;
+    text-align: center;
+    border: 1px solid #dbdbdb;
+    padding:1rem;
+    border-radius: 0.75rem;
+    margin:1rem;
+}
+.booking:hover{
+    cursor: pointer;
+
+}
+img{
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.cancel {
+    padding-top: 5%;
+}
+
+.cancel a:hover{
+    color: rgb(206, 43, 43);
+    border: 2px solid red;
+}
+
+.btn-cancel {
+    border: 2px solid #BF8D27;
+}
+
+
 /* footer */
 
 footer {
@@ -245,6 +299,9 @@ footer {
     color: #353E45;
 }
 
+
+/* media queries */
+
 @media screen and (max-width: 768px) {
     .footer-flex {
         flex-direction: column;
@@ -260,63 +317,3 @@ footer {
     }  
 }
 
-/* booking list */
-
-.header{
-    display: flex;
-    flex-flow: row-reverse wrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.bookings{
-    margin-top: 2rem;
-    flex:1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.booking{
-    flex:1;
-    max-width:20vw;
-    min-width: 20rem;
-    text-align: center;
-    border: 1px solid #dbdbdb;
-    padding:1rem;
-    border-radius: 0.75rem;
-    margin:1rem;
-}
-.booking:hover{
-    cursor: pointer;
-
-}
-img{
-    max-width: 100%;
-    margin-bottom: 2rem;
-}
-a i{
-    margin: 1rem;
-    color:rgb(236, 235, 228);
-    text-decoration: none;
-}
-.home a i{
-    font-size: 1.7rem;
-
-}
-
-.booking a i{
-    font-size: 1.1rem;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-}
-
-.booking:hover .cancel a i,.cancel a i:hover{
-    visibility: visible;
-    opacity: 1;
-}
-.cancel a i:hover{
-    color: rgb(206, 43, 43);
-    
-}

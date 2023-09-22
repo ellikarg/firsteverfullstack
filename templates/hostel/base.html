@@ -41,7 +41,7 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{% url 'hostel:room_list' %}">Rooms</a></li>
-                      <li><a class="dropdown-item" href="#">Booking</a></li>
+                      <li><a class="dropdown-item" href="{% url 'hostel:booking_list' %}">My Bookings</a></li>
                     </ul>
                 </li>
                 {% if user.is_authenticated %}

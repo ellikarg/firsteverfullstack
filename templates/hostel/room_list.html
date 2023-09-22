@@ -4,6 +4,16 @@
 
 {% block content %}
 
+{% if messages %}
+    {% for message in messages %}
+    <br>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        
+    {% endfor %}
+{% endif %}
+
 <div class="d-flex flex-column room-overview">
 
     <h1>Oiá</h1>
@@ -18,7 +28,7 @@
                 <p>The room Oiá has a big bed and a beautiful view out to the beach volleyball field of the Memorial da
                     Capoeira. It has a small kitchen and a bathroom.</p>
                 <p>Check the availability for your next holiday at the Memorial da Capoeira!</p>
-                <a href="#" class="btn btn-custom">Book the room Oiá</a>
+                <a href="{% url 'hostel:room_detail_view' name='Oiá' %}" class="btn btn-custom">Book the room Oiá</a>
             </div>
         </div>
     </div>
@@ -34,7 +44,7 @@
             <div class="room-description">
                 <p>The room Ogum has two separate beds and a private bathroom.</p>
                 <p>Check the availability for your next holiday at the Memorial da Capoeira!</p>
-                <a href="#" class="btn btn-custom">Book the room Ogum</a>
+                <a href="{% url 'hostel:room_detail_view' name='Ogum' %}" class="btn btn-custom">Book the room Ogum</a>
             </div>
         </div>
     </div>

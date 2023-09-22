@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, FormView, View, DeleteView
+from django.contrib import messages
 from django.urls import reverse, reverse_lazy
 from .models import Room, Booking
 from .forms import BookingForm
@@ -67,12 +68,21 @@ class RoomDetailView(View):
                 check_out=data['check_out']
             )
             booking.save()
-            return HttpResponse(booking)
+            messages.success(request, ('Thank you for your booking! You can find an overview of your bookings under "My Bookings".'))
+            return render(request, 'hostel/room_list.html', {})
         else:
-            return HttpResponse('Sorry, this room is already booked in the time you chose. Please try another room or date!')
+            messages.success(request, ('Sorry, this room is already booked in the time you chose. Please try another room or date!'))
+            return redirect(request.get_full_path())
 
 
 class CancelBookingView(DeleteView):
     model = Booking
     template_name = 'hostel/booking_cancel_view.html'
     success_url = reverse_lazy('hostel:booking_list')
+
+    def delete(self, request, *args, **kwargs):
+        booking = self.get_object()
+
+        messages.success(request, 'Your booking has been canceled!')
+
+        return super().delete(request, *args, **kwargs)
