@@ -16,15 +16,17 @@ body {
 
 #logo {
     max-width: 100%;
+    height: auto;
+    border: 2px solid blue;
 }
 
 #logo-container {
     width: 10rem;
-    margin-left: 1%;
+    border: 2px solid red;
 }
 
 .navbar-nav {
-    margin-right: 1%;
+    margin-right: 2%;
 }
 
 .nav-item li {
