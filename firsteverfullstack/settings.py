@@ -48,8 +48,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django.contrib.staticfiles',
     'widget_tweaks',
-
-    #my_apps
     'hostel',
     'hostel.booking_functions',
 ]
