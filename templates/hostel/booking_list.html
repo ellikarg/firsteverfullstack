@@ -4,6 +4,7 @@
 
 {% block content %}
 
+<!-- Django messages -->
 {% if messages %}
     {% for message in messages %}
     <br>
@@ -13,7 +14,7 @@
     {% endfor %}
 {% endif %}
 
-<!-- Back to Rooms List -->
+<!-- Back to Rooms List button -->
 <div class="d-flex justify-content-center back-button">
     <a href="{% url 'hostel:room_list' %}" class="btn btn-custom"><i class="fas fa-arrow-alt-circle-left"></i> Back to the Rooms</a>
 </div>
@@ -31,7 +32,7 @@
             {% if "Oiá" in booking.room.name %}
             <img src="{% static 'images/oia_3.JPG' %}" alt="Image of a beach close by related to the Room Oiá">
             {% else %}
-            <img src="{% static 'images/ogum_3.jpg' %}" alt="Image of a beach close by related to the Room Ogum">
+            <img src="{% static 'images/ogum_3.JPG' %}" alt="Image of a beach close by related to the Room Ogum">
             {% endif %}
 
                 <h3>{{booking.room.name}}</h3>

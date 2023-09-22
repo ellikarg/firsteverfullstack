@@ -4,10 +4,12 @@
 
 {% block content %}
 
+<!-- Banner -->
 <div class="banner hostel-banner">
     <h1>Hostel Rooms</h1>
 </div>
 
+<!-- Django messages -->
 {% if messages %}
 {% for message in messages %}
 <br>
@@ -18,6 +20,7 @@
 {% endfor %}
 {% endif %}
 
+<!-- Room Overview -->
 <h1>Oiá</h1>
 <div class="d-flex flex-column flex-lg-row room-overview">
     <div id="carouselExampleIndicators" class="carousel carousel2 slide">

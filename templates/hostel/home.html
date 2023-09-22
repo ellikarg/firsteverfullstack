@@ -1,15 +1,17 @@
 {% extends 'hostel/base.html' %}
-
+{% load static %}
 {% block content %}
-
+<!-- Banner -->
 <div class="banner home-banner">
     <h1>Memorial da Capoeira</h1>
     <h2>come exploring!</h2>
 </div>
+
+<!-- Cards as alternative Nav and Overview -->
 <section class="section">
     <div class="card-container d-flex flex-wrap">
         <div class="card" style="width: 18rem;">
-            <div class="card-img-top-container"><img class="card-img-top" src="../static/images/memorial_card.jpg" alt="Image of the Memorial da Capoeira"></div>
+            <div class="card-img-top-container"><img class="card-img-top" src="{% static 'images/memorial_card.jpg' %}" alt="Image of the Memorial da Capoeira"></div>
             <div class="card-body">
                 <h5 class="card-title">About the Memorial</h5>
                 <p class="card-text">Find some more information about the events in the Memorial da Capoeira and the constant change it is making.</p>
@@ -18,7 +20,7 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <div class="card-img-top-container"><img class="card-img-top" src="../static/images/academy_card.JPG" alt="Image of the Academy within the Memorial da Capoeira"></div>
+            <div class="card-img-top-container"><img class="card-img-top" src="{% static 'images/academy_card.JPG' %}" alt="Image of the Academy within the Memorial da Capoeira"></div>
             <div class="card-body">
                 <h5 class="card-title">The Academy</h5>
                 <p class="card-text">Find some information about the Academy, when classes of Capoeira take place and info about the Capoeira Shows.</p>
@@ -26,7 +28,7 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <div class="card-img-top-container"><img class="card-img-top" src="../static/images/hostel_card.JPG" alt="Image of the hostel within the Memorial da Capoeira"></div>
+            <div class="card-img-top-container"><img class="card-img-top" src="{% static 'images/hostel_card.JPG' %}" alt="Image of the hostel within the Memorial da Capoeira"></div>
             <div class="card-body">
                 <h5 class="card-title">The Hostel</h5>
                 <p class="card-text">Check out the available rooms and book some nights in the midst of Capoeira history, training and music.</p>
