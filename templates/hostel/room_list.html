@@ -28,7 +28,11 @@
                 <p>The room Oiá has a big bed and a beautiful view out to the beach volleyball field of the Memorial da
                     Capoeira. It has a small kitchen and a bathroom.</p>
                 <p>Check the availability for your next holiday at the Memorial da Capoeira!</p>
+                {% if user.is_authenticated %}
                 <a href="{% url 'hostel:room_detail_view' name='Oiá' %}" class="btn btn-custom">Book the room Oiá</a>
+                {% else %}
+                <a href="{% url 'account_login' %}" class="btn btn-custom">Book the room Oiá</a>
+                {% endif %}
             </div>
         </div>
     </div>

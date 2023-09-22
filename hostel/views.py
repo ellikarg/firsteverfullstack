@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.views.generic import ListView, FormView, View, DeleteView
 from django.contrib import messages
 from django.urls import reverse, reverse_lazy
@@ -61,15 +61,19 @@ class RoomDetailView(View):
 
         if len(available_rooms) > 0:
             room = available_rooms[0]
-            booking = Booking.objects.create(
-                user=self.request.user,
-                room=room,
-                check_in=data['check_in'],
-                check_out=data['check_out']
-            )
-            booking.save()
-            messages.success(request, ('Thank you for your booking! You can find an overview of your bookings under "My Bookings".'))
-            return render(request, 'hostel/room_list.html', {})
+            if request.user.is_authenticated:
+                booking = Booking.objects.create(
+                    user=self.request.user,
+                    room=room,
+                    check_in=data['check_in'],
+                    check_out=data['check_out']
+                )
+                booking.save()
+                messages.success(request, ('Thank you for your booking! You can find an overview of your bookings under "My Bookings".'))
+                return render(request, 'hostel/room_list.html', {})
+            else:
+                messages.success(request, ('You have to be logged in to book a room.'))
+                return render(request, 'account/login.html', {})
         else:
             messages.success(request, ('Sorry, this room is already booked in the time you chose. Please try another room or date!'))
             return redirect(request.get_full_path())

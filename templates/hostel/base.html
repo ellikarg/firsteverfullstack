@@ -40,8 +40,10 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hostel
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{% url 'hostel:room_list' %}">Rooms</a></li>
+                      <li><a class="dropdown-item" href="{% url 'hostel:room_list' %}">Room Booking</a></li>
+                      {% if user.is_authenticated %}
                       <li><a class="dropdown-item" href="{% url 'hostel:booking_list' %}">My Bookings</a></li>
+                      {% endif %}
                     </ul>
                 </li>
                 {% if user.is_authenticated %}
