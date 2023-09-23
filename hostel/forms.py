@@ -3,8 +3,6 @@ from .models import Booking
 from django.utils import timezone
 
 
-
-
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
