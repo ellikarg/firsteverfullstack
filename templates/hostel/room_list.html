@@ -4,12 +4,6 @@
 
 {% block content %}
 
-<!-- Banner -->
-<div class="banner">
-    <h1>Hostel Rooms</h1>
-    <h2>IN THE MEMORIAL DA CAPOEIRA</h2>
-    <img src="{% static 'images/rooms_banner.jpg' %}" alt="Image of a colourfully decorated house">
-</div>
 
 <!-- Django messages -->
 {% if messages %}
@@ -21,6 +15,13 @@
 
 {% endfor %}
 {% endif %}
+
+<!-- Banner -->
+<div class="banner">
+    <h1>Hostel Rooms</h1>
+    <h2>IN THE MEMORIAL DA CAPOEIRA</h2>
+    <img src="{% static 'images/rooms_banner.jpg' %}" alt="Image of a colourfully decorated house">
+</div>
 
 <!-- Room Overview -->
 <h1>Oiá</h1>

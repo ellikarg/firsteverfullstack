@@ -106,9 +106,18 @@ class UpdateBookingView(UpdateView):
     template_name = 'hostel/update_booking_view.html'
     success_url = reverse_lazy('hostel:booking_list')
 
-    def update(self, request, *args, **kwargs):
+    def form_valid(self, form):
         booking = self.get_object()
+        new_check_in = form.cleaned_data['check_in']
+        new_check_out = form.cleaned_data['check_out']
 
-        messages.success(request, 'Your booking has been updated!')
-
-        return super().update(request, *args, **kwargs)
+        if new_check_in < new_check_out:
+            if check_availability(booking.room, new_check_in, new_check_out):
+                messages.success(self.request, 'Your booking has been updated!')
+                return super().form_valid(form)
+            else:
+                messages.error(self.request, 'Selected dates are not available. Please choose different dates.')
+                return self.form_invalid(form)
+        else:
+            messages.error(self.request, 'Your Check-out must be after your Check-in')
+            return self.form_invalid(form)
