@@ -86,7 +86,7 @@ I have manually tested the website by doing the following:
 - the user is able to delete a booking after she reassures that she wants to delete this booking and gets a message displayed, stating that the booking is deleted
   <img src = "readme_assets/cancel_booking_1.JPG">
   <img src = "readme_assets/cancel_booking_2.JPG">
-- the user is able to change a booking and gets redirected to the my bookings page
+- the user is able to change a booking and gets a success message and redirected to the my bookings page
   <img src = "readme_assets/change_booking.JPG">
 
 <a name="testing-user-stories"></a>
