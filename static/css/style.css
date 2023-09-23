@@ -55,7 +55,7 @@ h1 {
 .banner h1 {
     text-align: center;
     color: #223116;
-    font-size: 200%;
+    font-size: 360%;
     text-transform: uppercase;
     font-weight: 900;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
@@ -65,7 +65,7 @@ h1 {
     text-align: center;
     color: #223116;
     font-weight: 700;
-    font-size: 100%;
+    font-size: 180%;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
 }
 
@@ -114,8 +114,12 @@ h1 {
 
 /* carousel */
 
+.carousel {
+    width: 70%;
+}
+
 .carousel-classes {
-    margin-top: 3%;
+    margin: 3% auto;
 }
 
 .classes-academy {
@@ -151,10 +155,6 @@ h1 {
 
 .room-overview {
     margin: 1%;
-}
-
-.carousel2 {
-    max-width: 450px;
 }
 
 .room-detail-text {
@@ -271,8 +271,13 @@ footer {
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 540px) {
     .carousel-caption {
-        display: none;
+        font-size: 50%;
     }
+
+    .carousel {
+        width: 100%;
+    }
+
 }
