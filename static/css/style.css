@@ -40,52 +40,34 @@ h1 {
 
 /* banner */
 
-.banner {
-    height: 20rlh;
+.banner img {
     width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    vertical-align: middle;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner {
+    text-align: center;
+    height: 40vw;
+    overflow: hidden;
 }
 
 .banner h1 {
     text-align: center;
-    color: #ffffff;
-    font-size: 350%;
+    color: #223116;
+    font-size: 200%;
     text-transform: uppercase;
     font-weight: 900;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
 }
 
 .banner h2 {
     text-align: center;
-    color: #ffffff;
+    color: #223116;
     font-weight: 700;
-    font-size: 180%;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.9);
+    font-size: 100%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
 }
-
-.home-banner {
-    background-image: url('../images/home_banner.jpg');
-}
-
-.academy-banner {
-    background-image: url('../images/academy_banner.jpg');
-}
-
-.hostel-banner {
-    background-image: url('../images/rooms_banner.jpg');
-}
-
-.hostel-banner h1 {
-    color: #BF8D27;
-}
-
-
 
 /* Cards */
 
@@ -133,50 +115,11 @@ h1 {
 /* carousel */
 
 .carousel-classes {
-    border: 1px solid #353E45;
-    margin-bottom: 2%;
+    margin-top: 3%;
 }
 
-.carousel-item-classes {
-    max-width: 100%;
-    height: 30rlh;
-}
-
-.carousel-flex {
-    height: 100%;
-    align-items: center;
-}
-
-.carousel-flex-text {
-    display: flex;
-    width: 35%;
-    justify-content: flex-end;
-}
-
-.classes {
-    width: 65%;
-    text-align: center;
-}
-
-.carousel-flex-img {
-    background-size: cover;
-    background-position: center;
-    width: 65%;
-    height: 30rlh;
-    vertical-align: middle;
-}
-
-#capoeira-class {
-    background-image: url('../images/classes_1.JPG');
-}
-
-#yoga-class {
-    background-image: url('../images/classes_2.JPG');
-    background-position: bottom;
-}
-
-#surf-class {
-    background-image: url('../images/classes_3.jpg');
+.classes-academy {
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* room detail with form */
@@ -272,6 +215,11 @@ img{
     border: 2px solid #BF8D27;
 }
 
+.btn-update {
+    border: 2px solid #001F54;
+    margin-top: 2%;
+}
+
 
 /* footer */
 
@@ -317,13 +265,14 @@ footer {
         flex-direction: column;
     }
 
-    .classes {
-        width: 100%;
-    }  
-    
-    .carousel-flex-text {
-        width: 100%;
-        justify-content: center;
-    }  
+@media screen and (max-width: 480px) {
+    .banner {
+        height: 30vh;
+    }
 }
 
+@media screen and (max-width: 380px) {
+    .carousel-caption {
+        display: none;
+    }
+}

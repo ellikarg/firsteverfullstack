@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 class Room(models.Model):
     rooms = (
         ('oia', 'OIÁ with 1 bed for 2 persons'),
-        ('ogum', 'OGUM with 2 beds for 2 persons'),
+        ('ogum', 'OGUM with 6 beds for 6 persons'),
     )
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=20, choices=rooms)
@@ -34,3 +34,6 @@ class Booking(models.Model):
 
     def get_cancel_booking_url(self):
         return reverse_lazy('hostel:cancel_booking', args=[self.pk, ])
+
+    def get_update_booking_url(self):
+        return reverse_lazy('hostel:update_booking', args=[self.pk, ])

@@ -5,8 +5,10 @@
 {% block content %}
 
 <!-- Banner -->
-<div class="banner hostel-banner">
+<div class="banner">
     <h1>Hostel Rooms</h1>
+    <h2>IN THE MEMORIAL DA CAPOEIRA</h2>
+    <img src="{% static 'images/rooms_banner.jpg' %}" alt="Image of a colourfully decorated house">
 </div>
 
 <!-- Django messages -->
@@ -64,7 +66,7 @@
                 the Memorial and enjoy some Açaí right across the street.</p>
             <p><strong>Check the availability for your next holiday at the Memorial da Capoeira!</strong></p>
             {% if user.is_authenticated %}
-            <a href="{% url 'hostel:room_detail_view' name='Oiá' %}" class="btn btn-custom">Book the room Oiá</a>
+            <a href="{% url 'hostel:room_detail_view' name='oia' %}" class="btn btn-custom">Book the room Oiá</a>
             {% else %}
             <a href="{% url 'account_login' %}" class="btn btn-custom">Book the room Oiá</a>
             {% endif %}
@@ -114,7 +116,7 @@
                 the Memorial and enjoy some Açaí right across the street.</p>
             <p><strong>Check the availability for your next holiday at the Memorial da Capoeira!</strong></p>
             {% if user.is_authenticated %}
-            <a href="{% url 'hostel:room_detail_view' name='Ogum' %}" class="btn btn-custom">Book the room Ogum</a>
+            <a href="{% url 'hostel:room_detail_view' name='ogum' %}" class="btn btn-custom">Book the room Ogum</a>
             {% else %}
             <a href="{% url 'account_login' %}" class="btn btn-custom">Book the room Ogum</a>
             {% endif %}

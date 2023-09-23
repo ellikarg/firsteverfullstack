@@ -1,0 +1,49 @@
+{% extends 'hostel/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- Back to Rooms List -->
+<div class="d-flex justify-content-center back-button">
+    <a href="{% url 'hostel:room_list' %}" class="btn btn-custom"><i class="fas fa-arrow-alt-circle-left"></i> Back to
+        the Rooms</a>
+</div>
+
+<!-- Form Area -->
+<div class="d-flex flex-column flex-md-row room align-items-center">
+    <div class="d-flex" id="booking-img">
+        <img src="{% static 'images/booking_img.jpg' %}" alt="Image of a beach with a sign that says 'seja feliz'">
+    </div>
+    <div class="ms-3 room-detail-booking">
+        <div>
+            {% if messages %}
+            {% for message in messages %}
+            <br>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"
+                        aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <h3>Your booking:</h3>
+            <p>Room: {{booking.room.name}}</p>
+            <p>From: {{booking.check_in}}</p>
+            <p>To: {{booking.check_out}}</p>
+            <br>
+            <p><strong>Update the dates of your booking:</strong></p>
+            <form action="" method="POST">
+                <p>{% render_field form.check_in placeholder="Pick a Date" type="date" class="datepicker" onkeydown="return false" %}
+                </p>
+                <p>{% render_field form.check_out placeholder="Pick a Date" type="date" class="datepicker" onkeydown="return false" %}
+                </p>
+                {% csrf_token %}
+                <button type="Submit" class="btn btn-custom">Change the dates</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -2,73 +2,62 @@
 {% load static %}
 {% block content %}
 
+
 <!-- Banner -->
-<div class="banner academy-banner">
+<div class="banner">
     <h1>Academy</h1>
     <h2>OF THE MEMORIAL DA CAPOEIRA</h2>
+    <img src="{% static 'images/academy_banner.jpg' %}" alt="Image of palm trees">
 </div>
 
 <!-- Classes in carousel -->
-<div>
-    <h1>Classes at the Academy</h1>
-</div>
 
-<div id="carouselExampleIndicators" class="carousel carousel-classes carousel-dark slide">
+<div id="carouselExampleDark" class="carousel carousel-classes carousel-dark slide">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item carousel-item-classes active">
-            <div class="carousel-flex d-flex flex-sm-row">
-                <div class="carousel-flex-text">
-                    <div class="classes">
-                        <h2>Capoeira</h2>
-                        <p>Enjoy Capoeira Classes:<br>Mo - Fri<br>17:00 - 19:00</p>
-                        <p><strong>where:</strong><br>Av. Solange Nunes do Nascimento<br>Cidade Nova<br>Natal -
-                            RN, Brazil</p>
-                    </div>
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="{% static 'images/classes_1.JPG' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <div class="classes-academy">
+                    <h2>Capoeira</h2>
+                    <p>Enjoy Capoeira Classes:<br>Mo - Fri<br>17:00 - 19:00</p>
+                    <p><strong>where:</strong><br>Av. Solange Nunes do Nascimento<br>Cidade Nova<br>Natal -
+                        RN, Brazil</p>
                 </div>
-                <div class="carousel-flex-img d-none d-md-block" id="capoeira-class"></div>
             </div>
         </div>
-        <div class="carousel-item carousel-item-classes">
-            <div class="carousel-flex d-flex flex-sm-row">
-                <div class="carousel-flex-text">
-                    <div class="classes">
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="{% static 'images/classes_2.JPG' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <div class="classes-academy">
                         <h2>Yoga</h2>
-                        <p>Enjoy Yoga Classes:<br>Tue, Thu<br>8:00 - 9:30</p>
-                        <p><strong>where:</strong><br>Av. Solange Nunes do Nascimento<br>Cidade Nova<br>Natal -
-                            RN, Brazil</p>
-                    </div>
+                        <p><strong>Enjoy Yoga Classes:<br>Tue, Thu<br>8:00 - 9:30</strong></p>
+                        <p><strong>where:<br>Av. Solange Nunes do Nascimento<br>Cidade Nova<br>Natal -
+                            RN, Brazil</strong></p>
                 </div>
-                <div class="carousel-flex-img d-none d-md-block" id="yoga-class"></div>
             </div>
         </div>
-        <div class="carousel-item carousel-item-classes">
-            <div class="carousel-flex d-flex flex-sm-row">
-                <div class="carousel-flex-text">
-                    <div class="classes">
-                        <h2>Surfing</h2>
-                        <p>Enjoy Surfing Classes:<br>by prior arrangement<br>3 or 6-day-Courses</p>
-                        <p><strong>where:</strong><br>Praia de Madeiro<br>Pipa<br>RN, Brazil</p>
-                    </div>
-                </div>
-                <div class="carousel-flex-img d-none d-md-block" id="surf-class"></div>
+        <div class="carousel-item">
+            <img src="{% static 'images/classes_3.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <div class="classes-academy">
+                    <h2>Surfing</h2>
+                    <p>Enjoy Surfing Classes:<br>by prior arrangement<br>3 or 6-day-Courses</p>
+                    <p><strong>where:</strong><br>Praia de Madeiro<br>Pipa<br>RN, Brazil</p>
+            </div>
             </div>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>

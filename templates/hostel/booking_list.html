@@ -29,7 +29,7 @@
     <div class="bookings">
         {% for booking in booking_list %}
         <div class="booking">
-            {% if "Oiá" in booking.room.name %}
+            {% if "oia" in booking.room.name %}
             <img src="{% static 'images/oia_3.JPG' %}" alt="Image of a beach close by related to the Room Oiá">
             {% else %}
             <img src="{% static 'images/ogum_3.JPG' %}" alt="Image of a beach close by related to the Room Ogum">
@@ -41,6 +41,7 @@
                 <p>Beds: {{booking.room.beds}}</p>
                 <p>Capacity: {{booking.room.capacity}}</p>
             <div class="cancel"><a href="{{booking.get_cancel_booking_url}}" class="btn btn-cancel">Cancel this Booking</a></div>
+            <div class="update"><a href="{{booking.get_update_booking_url}}" class="btn btn-update">Change this Booking</a></div>
 
         </div>
         {% endfor %}

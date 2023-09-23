@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.views.generic import ListView, FormView, View, DeleteView
+from django.views.generic.edit import UpdateView
 from django.contrib import messages
 from django.urls import reverse, reverse_lazy
 from .models import Room, Booking
@@ -21,8 +22,9 @@ def RoomListView(request):
 
 class BookingList(ListView):
     model = Booking
+
     def get_queryset(self, *args, **kwargs):
-        if self.request.user.is_staff: 
+        if self.request.user.is_staff:
             booking_list = Booking.objects.all()
             return booking_list
         else:
@@ -57,13 +59,13 @@ class RoomDetailView(View):
             data = form.cleaned_data
 
         available_rooms = []
-        if data is not None: 
+        if data is not None:
             for room in room_list:
                 if check_availability(room, data['check_in'], data['check_out']):
                     if data['check_in'] < data['check_out']:
                         available_rooms.append(room)
                     else:
-                        messages.info (request, 'Your Check-out must be after your Check-in')
+                        messages.info(request, 'Your Check-out must be after your Check-in')
                         return redirect(request.get_full_path())
         if len(available_rooms) > 0:
             room = available_rooms[0]
@@ -96,3 +98,17 @@ class CancelBookingView(DeleteView):
         messages.success(request, 'Your booking has been canceled!')
 
         return super().delete(request, *args, **kwargs)
+
+
+class UpdateBookingView(UpdateView):
+    model = Booking
+    fields = ['check_in', 'check_out']
+    template_name = 'hostel/update_booking_view.html'
+    success_url = reverse_lazy('hostel:booking_list')
+
+    def update(self, request, *args, **kwargs):
+        booking = self.get_object()
+
+        messages.success(request, 'Your booking has been updated!')
+
+        return super().update(request, *args, **kwargs)
