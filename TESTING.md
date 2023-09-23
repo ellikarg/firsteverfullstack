@@ -29,21 +29,42 @@
 <a name="html-validation"></a>
 ### HTML Validation
 
+HTML Validation was done with [The WEC Markup Validation Service](https://validator.w3.org/). There were no errors found.
+
+<details><summary>Testing Result</summary>
+<img src = "readme_assets/html_testing.jpg"></details>
+
 <a name="css-validation"></a>
 ### CSS Validation
+
+The CSS was tested by the [W3C CSS Validator](https://jigsaw.w3.org/) and there were many errors found due to the bootstrap libraries. For my own css file, there was no error detected.
+
+<details><summary>Testing Result</summary>
+<img src = "readme_assets/css_testing.jpg"></details>
 
 <a name="javascript-validation"></a>
 ### JavaScript Validation
 
+I used [JSHint Static Code Analysis Tool](https://jshint.com/) for JavaScript to validate the Javascript files. There were no errors found.
+
+<details><summary>Testing Result</summary>
+<img src = "readme_assets/jshint_testing.jpg"></details>
+
 <a name="pep8-validation"></a>
 ### PEP8 Validation
 
-The code was passed through the [PEP8 linter](https://pep8ci.herokuapp.com/) and there are no problems
+The code of the admin, forms, models, urls and views files was passed through the [PEP8 linter](https://pep8ci.herokuapp.com/) and there are no problems apart from sometimes too long lines. This seems to happen with some django settings, where no linebreak is possible or advisable.
+
 <details><summary>Testing Result</summary>
-<img src = "docs/pep8_testing.PNG"></details>
+<img src = "readme_assets/pep8_testing.jpg"></details>
 
 <a name="accessibility-and-performance"></a>
 ### Accessibility & Performance
+
+Lighthouse testing has been done for all pages and the percentage was always in the green area - apart from the pages with big images, which had a slightly worse performance because of the size of the images.
+
+<details><summary>Testing Result</summary>
+<img src = "readme_assets/lighthouse_testing.jpg"></details>
 
 - - -
 
