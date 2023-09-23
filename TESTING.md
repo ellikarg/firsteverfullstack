@@ -76,8 +76,7 @@ Lighthouse testing has been done for all pages and the percentage was always in 
 
 I have manually tested the website by doing the following:
 - given that the user is not yet logged in, the user cannot book rooms and gets redirected to the signin page
-- given that the room is already booked, there is an error message stating to choose another room or date
-  <img src = "readme_assets/Booking_error.JPG">
+- given that the room is already booked, there is an error message stating to choose another room or date <img src = "readme_assets/Booking_error.JPG">
 - given that the room is available, there is a success message displayed and the user is directed back to the Room Booking page
   <img src = "readme_assets/booking_successful.JPG">
 - given that the user inserts a check in date that lies after the check out date, there will be a message displayed stating exactly that
