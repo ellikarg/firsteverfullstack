@@ -6,6 +6,7 @@ from django.urls import reverse, reverse_lazy
 from .models import Room, Booking
 from .forms import BookingForm
 from hostel.booking_functions.availability import check_availability
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
@@ -20,7 +21,10 @@ def RoomListView(request):
     return render(request, 'hostel/room_list.html')
 
 
-class BookingList(ListView):
+class BookingList(LoginRequiredMixin, ListView):
+
+    redirect_field_name = 'redirect_to'
+
     model = Booking
 
     def get_queryset(self, *args, **kwargs):
@@ -32,7 +36,11 @@ class BookingList(ListView):
             return booking_list
 
 
-class RoomDetailView(View):
+
+class RoomDetailView(LoginRequiredMixin, View):
+
+    redirect_field_name = 'redirect_to'
+
     def get(self, request, *args, **kwargs):
         rooms = kwargs.get('name', None)
         form = BookingForm()
@@ -87,7 +95,10 @@ class RoomDetailView(View):
             return redirect(request.get_full_path())
 
 
-class CancelBookingView(DeleteView):
+class CancelBookingView(LoginRequiredMixin, DeleteView):
+
+    redirect_field_name = 'redirect_to'
+
     model = Booking
     template_name = 'hostel/booking_cancel_view.html'
     success_url = reverse_lazy('hostel:booking_list')
@@ -100,7 +111,10 @@ class CancelBookingView(DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-class UpdateBookingView(UpdateView):
+class UpdateBookingView(LoginRequiredMixin, UpdateView):
+
+    redirect_field_name = 'redirect_to'
+
     model = Booking
     fields = ['check_in', 'check_out']
     template_name = 'hostel/update_booking_view.html'
