@@ -36,7 +36,6 @@ class BookingList(LoginRequiredMixin, ListView):
             return booking_list
 
 
-
 class RoomDetailView(LoginRequiredMixin, View):
 
     redirect_field_name = 'redirect_to'
