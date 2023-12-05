@@ -28,10 +28,6 @@ class BookingList(LoginRequiredMixin, ListView):
     model = Booking
 
     def get_queryset(self, *args, **kwargs):
-        if self.request.user.is_staff:
-            booking_list = Booking.objects.all()
-            return booking_list
-        else:
             booking_list = Booking.objects.filter(user=self.request.user)
             return booking_list
 
@@ -102,11 +98,16 @@ class CancelBookingView(LoginRequiredMixin, DeleteView):
     template_name = 'hostel/booking_cancel_view.html'
     success_url = reverse_lazy('hostel:booking_list')
 
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+
+        if self.object.user != self.request.user:
+            return redirect(self.success_url)
+
+        return super().get(request, *args, **kwargs)
+
     def delete(self, request, *args, **kwargs):
-        booking = self.get_object()
-
         messages.success(request, 'Your booking has been canceled!')
-
         return super().delete(request, *args, **kwargs)
 
 
@@ -118,6 +119,14 @@ class UpdateBookingView(LoginRequiredMixin, UpdateView):
     fields = ['check_in', 'check_out']
     template_name = 'hostel/update_booking_view.html'
     success_url = reverse_lazy('hostel:booking_list')
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+
+        if self.object.user != self.request.user:
+            return redirect(self.success_url)
+
+        return super().get(request, *args, **kwargs)
 
     def form_valid(self, form):
         booking = self.get_object()
