@@ -7,8 +7,8 @@
 
 <!-- Back to Rooms List -->
 <div class="d-flex justify-content-center back-button">
-    <a href="{% url 'hostel:room_list' %}" class="btn btn-custom"><i class="fas fa-arrow-alt-circle-left"></i> Back to
-        the Rooms</a>
+    <a href="{% url 'hostel:booking_list' %}" class="btn btn-custom"><i class="fas fa-arrow-alt-circle-left"></i> Back to
+        My Bookings</a>
 </div>
 
 <!-- Form Area -->
@@ -27,7 +27,7 @@
             </div>
             {% endfor %}
             {% endif %}
-            <h3>Your booking:</h3>
+            <h3>Your Booking:</h3>
             <p>Room: {{booking.room.name}}</p>
             <p>From: {{booking.check_in}}</p>
             <p>To: {{booking.check_out}}</p>
