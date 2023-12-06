@@ -4,23 +4,26 @@
 The Live Webpage can be found within this link: https://firsteverfullstack-7b5d63bca638.herokuapp.com
 
 ## Table of Content
-1. [Strategy](#strategy)
+1. [What's new?](#whats-new)
+    1. [Defensive Coding](#defensive-coding)
+    2. [Registration](#registration)
+2. [Strategy](#strategy)
     1. [Agile](#agile)
     2. [Project Goals](#project-goals)
-2. [User Experience](#user-experience)
+3. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
     2. [User Requirements & Expectations](#user-requirements-&-expectations)
     3. [User Stories](#user-stories)
-3. [Design](#design)
+4. [Design](#design)
     1. [Colours](#colours)
     3. [Fonts](#fonts)
     4. [Structure](#structure)
     5. [Existing Features](#existing-features)
     6. [Wireframes](#wireframes)
-4. [Technologies Used](#technologies-used)
+5. [Technologies Used](#technologies-used)
     1. [Frameworks](#frameworks)
     2. [Other Tools](#other-tools)
-5. [Data Structure](#data-structure)
+6. [Data Structure](#data-structure)
     1. [Models](#models)
     2. [Reusable Code](#reusable-code)
 7. [Deployment](#deployment)
@@ -35,6 +38,26 @@ The Live Webpage can be found within this link: https://firsteverfullstack-7b5d6
     2. [Code](#code)
 12. [Acknowledgments](#acknowledgments)
 
+
+<a name="whats-new"></a>
+## What's new?
+This Version 2.0 of the Website of the Memorial da Capoeira includes more extensive defensive Coding as well as an update for the Registration feature.
+
+<a name="defensive-coding"></a>
+### Defensive Coding
+Two methods of devensive coding were used to improve the safety of the Website.
+
+The first is the addition of a django-internal Mixin, the LoginRequiredMixin, which was added to the BookingList, the RoomDetailView, the CancelBookingView and the UpdateBookingView. This was done in order to prevent visitors of the website who are not loggedin users to view sensitive data by inserting a specific url. Any user that is not logged in, will be redirected to the login page.
+
+The second is the addition of a check whether the loggedin user is also the creator of a booking in order to be able to edit or delete that specific booking. In case the user is not the creator of that booking, she will be redirected to her booking overview page. The idea behind that specific redirection is that in case the loggedin user changes the pk of the booking directly in the url (let's say, because she is searching manually for another booking she has made), she will be redirected to the page that shows all her bookings, so she can continue to search for the right booking she wants to edit or delete. In case it is not by accident but by maliciousness, I think any redirection is fine and in my eyes a bit more smooth than the 403 forbidden page.
+
+<a name="registration"></a>
+### Registration
+By including the line 
+```
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+```
+in the settings file, the registration of new users with or without an email-address will run more smoothly than before.
 
 <a name="strategy"></a>
 ## Strategy
